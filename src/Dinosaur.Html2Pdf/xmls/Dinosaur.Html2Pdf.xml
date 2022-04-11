@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dinosaur.Html2Pdf</name>
+    </assembly>
+    <members>
+        <member name="T:Dinosaur.Html2Pdf.Controllers.Html2PdfController">
+            <summary>
+            Html 转 pdf
+            </summary>
+        </member>
+        <member name="M:Dinosaur.Html2Pdf.Controllers.Html2PdfController.#ctor(Dinosaur.DinkToPdf.Contracts.IConverter)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="converter"></param>
+        </member>
+        <member name="M:Dinosaur.Html2Pdf.Controllers.Html2PdfController.Wkhtml(Dinosaur.Html2Pdf.Models.ConvertOptions)">
+            <summary>
+            基于 wkhtml 的方式
+            </summary>
+            <param name="opts"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:Dinosaur.Html2Pdf.Controllers.Html2PdfController.Chrome(Dinosaur.Html2Pdf.Models.ConvertOptions)">
+            <summary>
+            基于 google-chrome 打印的方式
+            </summary>
+            <param name="opts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dinosaur.Html2Pdf.Controllers.MergerController">
+            <summary>
+            文件合并组织
+            </summary>
+        </member>
+        <member name="M:Dinosaur.Html2Pdf.Controllers.MergerController.#ctor(Microsoft.Extensions.Caching.Memory.IMemoryCache)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="cache"></param>
+        </member>
+        <member name="M:Dinosaur.Html2Pdf.Controllers.MergerController.Html(Microsoft.AspNetCore.Http.IFormFileCollection)">
+            <summary>
+            html文件合并，按文件名升序逐个拼在一起
+            </summary>
+            <param name="htmlSlices">待合并的html文件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dinosaur.Html2Pdf.Controllers.MergerController.Preview(System.String)">
+            <summary>
+            合并后的预览
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dinosaur.Html2Pdf.Models.ConvertOptions">
+            <summary>
+            转换参数
+            </summary>
+        </member>
+        <member name="P:Dinosaur.Html2Pdf.Models.ConvertOptions.Url">
+            <summary>
+            可访问的url（优先）
+            </summary>
+        </member>
+        <member name="P:Dinosaur.Html2Pdf.Models.ConvertOptions.HtmlContent">
+            <summary>
+            html内容
+            </summary>
+        </member>
+        <member name="P:Dinosaur.Html2Pdf.Models.ConvertOptions.DocumentTitle">
+            <summary>
+            pdf文件的文档名称
+            </summary>
+        </member>
+        <member name="P:Dinosaur.Html2Pdf.Models.ConvertOptions.FileDownloadName">
+            <summary>
+            文件下载名称
+            </summary>
+        </member>
+        <member name="T:Dinosaur.Html2Pdf.Models.MergedHtml">
+            <summary>
+            html片段合并的结果
+            </summary>
+        </member>
+        <member name="P:Dinosaur.Html2Pdf.Models.MergedHtml.Key">
+            <summary>
+            合并产生的key
+            </summary>
+        </member>
+        <member name="P:Dinosaur.Html2Pdf.Models.MergedHtml.ExpiresIn">
+            <summary>
+            有效期（秒）
+            </summary>
+        </member>
+    </members>
+</doc>
